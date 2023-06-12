@@ -1,0 +1,386 @@
+---
+const { img, title, type, resume, resume_lang, pris_indbunden, forlag, udgave, EAN, levering, tidligere_pris_indbunden, tidligere_pris_ebog, pris_ebog, tidligere_pris_lydbog, pris_lydbog } = Astro.props;
+import "../styles/tokens.css";
+import "../styles/global.css";
+import Button from "./Button.astro";
+import Genre from "./Genre.astro";
+import ProductCardSectionBest from "../components/ProductCardSectionBest.astro";
+---
+
+<section class="hele_side">
+  <section class="indhold">
+    <!-- Billede -->
+    <article class="billede_container">
+      <img class="billede" src={img} alt="produktbillede" height="350" width="350" />
+    </article>
+    <article>
+      <div class="header">
+        <div>
+          <h3 class="type">{type}</h3>
+          <h1>{title}</h1>
+        </div>
+        <figure class="heart">
+          <img src="/heart.svg" width="30px" />
+        </figure>
+      </div>
+      <div class="forfattare">
+        <p>Af</p>
+        <Button link="/kategoriside.html" variant="tertiary" style="red">Christina Bonde</Button>
+      </div>
+      <!-- Resumé -->
+      <h2>Resumé:</h2>
+      <p>{resume} <Button link="#resume" variant="tertiary" style="black">Læs mere</Button></p>
+      <!-- Format -->
+
+      <!-- Format -->
+      <div>
+        <h2>Vælg format:</h2>
+        <div class="formater">
+          <div class="box border_active">
+            <div></div>
+            <div class="info_format">
+              <img src="/indbunden.webp" alt="book" width="35px" role="img" />
+              <div class="title_format">
+                <p>Indbunden</p>
+                <p><strong>{pris_indbunden} DKK</strong></p>
+              </div>
+              <p><s>{tidligere_pris_indbunden}</s></p>
+            </div>
+            <div class="check_active">
+              <img class="red_check" src="/check.webp" alt="check" role="img" />
+            </div>
+          </div>
+
+          <div class="box">
+            <div></div>
+            <div class="info_format">
+              <img src="/ebog.webp" alt="book" width="25px" role="img" />
+              <div class="title_format">
+                <h3>E-bog</h3>
+                <h3><strong>{pris_ebog} DKK</strong></h3>
+              </div>
+              <p><s>{tidligere_pris_ebog}</s></p>
+            </div>
+            <div class="check">
+              <!-- <img class="red_check" src="/check.webp" alt="check" /> -->
+            </div>
+          </div>
+
+          <div class="box">
+            <div></div>
+            <div class="info_format">
+              <img src="/lydbog.webp" alt="book" width="35px" role="img" />
+              <div class="title_format">
+                <h3>Lydbog</h3>
+                <h3><strong>{pris_lydbog} DKK</strong></h3>
+              </div>
+              <p><s>{tidligere_pris_lydbog}</s></p>
+            </div>
+            <div class="check">
+              <!-- <img class="red_check" src="/check.webp" alt="check" /> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Købknap -->
+      <div class="knapper">
+        <div class="quantity">
+          <button class="minus" aria-label="Minus">-</button>
+          <input type="text" class="count" value="1" />
+          <button class="plus" aria-label="Plus">+</button>
+        </div>
+
+        <!-- <img  src="/shopping-cart.webp" width="20px"> -->
+        <Button class="flex" link="kurv.html" variant="primary" size="big" style="white" aria-label="Læg i kurv">Læg i kurv</Button>
+        <div class="tilbage">
+          <div class="lager">
+            <div class="lager_box">
+              <img src="/check.webp" alt="check icon" role="img" aria-label="check icon" />
+            </div>
+            <p class="lager_tekst" aria-label="på lager">På lager</p>
+          </div>
+          <p>Afs. {levering} hverdage</p>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div id="resume">
+        <h2 aria-label="resume">Resumé:</h2>
+        <p>{resume_lang}</p>
+      </div>
+      <div>
+        <h2 aria-label="tags">Tags</h2>
+        <div class="tags_button">
+          <Button link="kategoriside.html" variant="tags" style="white" size="tags" aria-label="Genre fantasy">Fantasy</Button>
+          <Button link="kategoriside.html" variant="tags" style="white" size="tags" aria-label="Genre krimi">Krimi</Button>
+          <Button link="kategoriside.html" variant="tags" style="white" size="tags" aria-label="Romantik">Romantik</Button>
+        </div>
+      </div>
+    </article>
+    <article>
+      <h2 aria-label="detaljer">Detaljer</h2>
+      <hr class="solid" />
+      <div class="detaljer_box">
+        <div class="detaljer_info">
+          <p>Af:</p>
+          <Button link="/kategoriside.html" variant="tertiary" style="red" aria-label="Forfatter Christina Bonde">Christina Bonde</Button>
+        </div>
+        <div class="detaljer_info">
+          <p aria-label="forlag">Forlag:</p>
+          <p>{forlag}</p>
+        </div>
+        <div class="detaljer_info">
+          <p aria-label="udgave">Udgave:</p>
+          <p>{udgave}</p>
+        </div>
+        <div class="detaljer_info">
+          <p aria-label="ean">EAN:</p>
+          <p>{EAN}</p>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section><ProductCardSectionBest /></section>
+  <section>
+    <Genre />
+  </section>
+</section>
+<style>
+  .hele_side {
+    display: grid;
+    gap: 50px;
+  }
+  @media only screen and (min-width: 900px) {
+    .hele_side {
+      gap: 90px;
+    }
+  }
+
+  h1 {
+    margin-block: 20px;
+  }
+
+  p {
+    max-width: 65ch;
+  }
+  h2 {
+    padding-top: 20px;
+    padding-bottom: 5px;
+  }
+
+  .type {
+    color: var(--ctaColorRed);
+    font-weight: var(--fontBold);
+  }
+  .indhold {
+    display: grid;
+  }
+  @media (min-width: 900px) {
+    .indhold {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  article {
+    padding: 10px;
+  }
+
+  .billede_container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 80%;
+    margin: auto;
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .billede {
+    width: 75%;
+  }
+
+  .forfattare {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .formater {
+    display: flex;
+    flex-direction: row;
+    margin-block: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 900px) {
+    .formater {
+      justify-content: center;
+    }
+  }
+
+  .box {
+    border-radius: 20px;
+    border-color: var(--middleblue);
+    padding-block: 10px;
+    padding-inline: 10px;
+    border-width: 2px;
+    width: 150px;
+    height: 130px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    cursor: pointer;
+  }
+
+  .info_format {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .border_active {
+    border-color: var(--ctaColorRed);
+  }
+  .check_active {
+    background-color: var(--ctaColorRed);
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    padding: 2px;
+  }
+
+  .check {
+    background-color: var(--lightgrey);
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    padding: 2px;
+  }
+
+  .lager_box {
+    background-color: var(--darkgreen);
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    padding: 3px;
+  }
+
+  .lager_box {
+    background-color: var(--darkgreen);
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    padding: 3px;
+  }
+
+  .lager {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .tags_button {
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    margin-block: 10px;
+    flex-wrap: wrap;
+  }
+
+  .solid {
+    border-top: 1px solid var(--black);
+  }
+  .detaljer_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-block: 10px;
+  }
+
+  .detaljer_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .knapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 900px) {
+    .knapper {
+      justify-content: center;
+    }
+  }
+
+  .tilbage {
+    @media (max-width: 900px) {
+      order: -1;
+    }
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+  }
+
+  .quantity .count {
+    margin: 0 10px;
+    font-size: 18px;
+    width: 25px;
+    align-self: center;
+  }
+
+  .minus,
+  .plus {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #ccc;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .minus:hover,
+  .plus:hover {
+    background-color: #999;
+  }
+  .quantity input {
+    border: 0.5px solid #ccc;
+  }
+  .minus:active,
+  .plus:active {
+    background-color: #555;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .overskrift {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .overskrift h3 {
+      display: none;
+    }
+    .overskrift :first-child {
+      display: flex;
+    }
+
+    .quantity {
+      padding-left: 0;
+      justify-content: center;
+    }
+  }
+</style>

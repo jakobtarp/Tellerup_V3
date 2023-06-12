@@ -1,0 +1,82 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import MainHeader from "../components/MainHeader.astro";
+import Brodkrummer from "../components/Brodkrummer.astro";
+import "../styles/global.css";
+import "../styles/tokens.css";
+
+meta: title: "profil";
+description: "din profil";
+keywords: "profil";
+---
+
+<MainLayout title="profil">
+  <MainHeader title="Profil" />
+  <!-- Brødskrummer -->
+  <section class="brodkrummer">
+    <Brodkrummer andre_side="Profil" />
+  </section>
+  <section class="">
+    <section class="profil-section">
+      <h2>Hej Stefan</h2>
+      <p>Hvad kan vi gøre for dig i dag?</p>
+    </section>
+    <section class="profil-grid">
+      <article class="profil-box cursor-pointer" style="background-color: var(--lighterblue);"><a href="profil.html"><h2>Mine ordrer</h2></a></article>
+      <div class="profil-box cursor-pointer" style="background-color: var(--darkvanilla);"><a href="profil.html"><h2>Mine bøger</h2></a></div>
+      <div class="profil-box cursor-pointer" style="background-color: var(--royalblue);"><a href="profil.html"><h2 id="white">Mine oplysninger</h2></a></div>
+    </section>
+  </section>
+</MainLayout>
+<div class="stroke"></div>
+
+<style>
+
+.brodkrummer {
+  padding-inline: var(--globalPaddingL); 
+}
+.indhold {
+    display: grid;
+    gap: 20px;
+  }
+  .profil-grid {
+    padding-inline: var(--globalPaddingL);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profil-section {
+    margin-top: 20px;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .profil-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    height: 150px;
+  }
+  .profil-box:hover {
+    background-color: #333;
+    scale: 102%;
+  }
+  .profil-section h2 {
+    font-weight: bold;
+  }
+  .profil-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px;
+  }
+  .stroke {
+    border: 0.3px solid black;
+    margin-inline: 20px;
+  }
+  #white {
+    color: white;
+  }
+</style>

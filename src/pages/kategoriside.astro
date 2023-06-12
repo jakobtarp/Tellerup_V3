@@ -1,0 +1,48 @@
+---
+import "../styles/tokens.css";
+import "../styles/base.css";
+import "../styles/global.css";
+import MainHeader from "../components/MainHeader.astro";
+import ProductCardSection from "../components/ProductCardSection.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Brodkrummer from "../components/Brodkrummer.astro";
+import Genre from "../components/Genre.astro";
+import Kategorifilter from "../components/Kategorifilter.astro";
+
+meta: title: "kategoriside";
+description: "hele udvalget";
+keywords: "kategori, kategorier";
+---
+
+<MainLayout title="Kategorier">
+  <MainHeader title="Kategorier" beskrivelse="Se vores store udvalg" />
+  <main>
+    <!-- Brødskrummer -->
+    <section class="brodkrummer">
+      <Brodkrummer andre_side="Kategorier" />
+      <section class="hele_siden">
+        <Kategorifilter />
+        <section class="genre"><Genre /></section>
+      </section>
+    </section>
+  </main>
+
+  <style>
+    .hele_siden {
+      display: grid;
+      gap: 50px;
+    }
+    .genre {
+      margin-inline: var(--globalPaddingL);
+    }
+    .brodkrummer {
+      margin-left: 8px;
+    }
+
+    @media only screen and (min-width: 900px) {
+      .hele_siden {
+        gap: 90px;
+      }
+    }
+  </style>
+</MainLayout>

@@ -1,0 +1,70 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import MainHeader from "../components/MainHeader.astro";
+import Button from "../components/Button.astro";
+import "../styles/global.css";
+import "../styles/tokens.css";
+import Brodkrummer from "../components/Brodkrummer.astro";
+
+meta: title: "genre";
+description: "alle genre";
+keywords: "genre";
+---
+
+<MainLayout title="Genrer">
+  <MainHeader title="Genrer" />
+
+  <section>
+    <Brodkrummer andre_side="Kategorier" andre_pil="❯" tredje_side="Genre" />
+  </section>
+  <section class="genre-section">
+    <div class="genre-grid">
+      <div class="genre-box cursor-pointer" style="background-color: var(--darkvanilla);"><a href="/kategoriside.html"><div>BØRNEBØGER</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--grey);"><a href="/kategoriside.html" ><div>KRIMI</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--royalblue);"><a href="/kategoriside.html"><div class="white">ROMANTIK</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--lighterblue);"><a href="/kategoriside.html"><div>SCI-FY</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--royalblue);"><a href="/kategoriside.html"><div class="white">FANTASY</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--lighterblue);"><a href="/kategoriside.html"><div>UNGDOMSROMANER</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--grey);"><a href="/kategoriside.html"><div>YA-REALISME</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--darkvanilla);"><a href="/kategoriside.html"><div>SKØNLITTERATUR</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--lighterblue);"><a href="/kategoriside.html"><div>BIOGRAFIER</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--royalblue);"><a href="/kategoriside.html"><div class="white">HOBBY</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--darkvanilla);"><a href="/kategoriside.html"><div>ROMANTIK</div></a></div>
+      <div class="genre-box cursor-pointer" style="background-color: var(--royalblue);"><a href="/kategoriside.html"><div class="white">SCI-FY</div></a></div>
+    </div>
+  </section>
+</MainLayout>
+<style>
+  section {
+    padding-inline: var(--globalPaddingL);
+  }
+
+  .genre-section {
+    text-align: center;
+  }
+
+  .genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  .genre-section .genre-box a {
+    font-weight: bold;
+  }
+  .genre-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    height: 150px;
+    padding: 10px;
+  }
+  .genre-box:hover {
+    background-color: #333;
+    scale: 105%;
+    transition-duration: 300ms;
+  }
+  .white {
+    color: white;
+  }
+</style>
