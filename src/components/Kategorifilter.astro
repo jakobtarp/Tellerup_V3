@@ -40,9 +40,9 @@ import Genre from "../components/Genre.astro";
             <div class="dropdown-content">
               <label><input class="mt-4" type="checkbox" name="option1" />Alle bøger</label><br />
               <label><input class="mt-4" type="checkbox" name="option2" />Bestsellers</label><br />
-              <label><input class="mt-4" type="checkbox" name="option2" />Nyheder</label><br />
-              <label><input class="mt-4" type="checkbox" name="option2" />Notesbøger</label><br />
-              <label><input class="mt-4 mb-4" type="checkbox" name="option3" />Bogserier</label>
+              <label><input class="mt-4" type="checkbox" name="option3" />Nyheder</label><br />
+              <label><input class="mt-4" type="checkbox" name="option4" />Notesbøger</label><br />
+              <label><input class="mt-4 mb-4" type="checkbox" name="option5" />Bogserier</label>
             </div>
           </div>
         </div>
@@ -51,14 +51,27 @@ import Genre from "../components/Genre.astro";
           <div class="dropdown">
             <input class="mb-2 ml-2 mt-4" type="text" class="dropdown-search" placeholder="Søg..." />
             <div class="dropdown-content cursor-pointer">
-              <label><input class="mt-4" type="checkbox" name="option4" />Christina Bonde</label><br />
-              <label><input class="mt-4" type="checkbox" name="option5" />Bettina Stuhr Lindskow</label><br />
-              <label><input class="mt-4" type="checkbox" name="option4" />Line Wenzel</label><br />
-              <label><input class="mt-4" type="checkbox" name="option5" />Kristoffer J. Andersen</label><br />
-              <label><input class="mt-4" type="checkbox" name="option4" />Louise Hailberg</label><br />
-              <label><input class="mt-4 mb-4" type="checkbox" name="option5" />Kristoffer J. Andersen</label><br />
+              <label><input class="mt-4" type="checkbox" name="option1" />Christina Bonde</label><br />
+              <label><input class="mt-4" type="checkbox" name="option2" />Bettina Stuhr Lindskow</label><br />
+              <label><input class="mt-4" type="checkbox" name="option3" />Line Wenzel</label><br />
+              <label><input class="mt-4" type="checkbox" name="option4" />Kristoffer J. Andersen</label><br />
+              <label><input class="mt-4" type="checkbox" name="option5" />Louise Hailberg</label><br />
+              <label><input class="mt-4 mb-4" type="checkbox" name="option6" />Kristoffer J. Andersen</label><br />
               <br />
-              <button class="underline font-bold">Se alle</button>
+              <a class="underline font-bold" href="/forfattere.html">Se oversigt</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="dropdown-button">Genre</button>
+          <div class="dropdown">
+            <input class="mb-2 ml-2 mt-4" type="text" class="dropdown-search" placeholder="Søg..." />
+            <div class="dropdown-content cursor-pointer">
+              <label><input class="mt-4" type="checkbox" name="option1" />Fantasy</label><br />
+              <label><input class="mt-4" type="checkbox" name="option2" />Krimi</label><br />
+              <label><input class="mt-4" type="checkbox" name="option3" />Sci-fi</label><br />
+              <label><input class="mt-4" type="checkbox" name="option4" />Realisme</label><br />
+              <label><input class="mt-4" type="checkbox" name="option5" />Romantik</label><br />
             </div>
           </div>
         </div>
@@ -67,12 +80,14 @@ import Genre from "../components/Genre.astro";
           <div class="dropdown">
             <input class="mb-2 ml-2 mt-4" type="text" class="dropdown-search" placeholder="Søg..." />
             <div class="dropdown-content cursor-pointer">
-              <label><input class="mt-4" type="checkbox" name="option7" />Fantasy</label><br />
-              <label><input class="mt-4" type="checkbox" name="option8" />Krimi</label><br />
-              <label><input class="mt-4" type="checkbox" name="option7" />Venskab</label><br />
-              <label><input class="mt-4" type="checkbox" name="option8" />Realisme</label><br />
-              <label><input class="mt-4" type="checkbox" name="option8" />Ungdom</label><br />
-              <label><input class="mt-4 mb-4" type="checkbox" name="option9" />Tilbud</label>
+              <label><input class="mt-4" type="checkbox" name="option1" />Selvudvikling</label><br />
+              <label><input class="mt-4" type="checkbox" name="option2" />Politik</label><br />
+              <label><input class="mt-4" type="checkbox" name="option3" />Venskab</label><br />
+              <label><input class="mt-4" type="checkbox" name="option4" />Kunst</label><br />
+              <label><input class="mt-4" type="checkbox" name="option5" />Ungdom</label><br />
+              <label><input class="mt-4" type="checkbox" name="option6" />Fodbold</label><br />
+              <label><input class="mt-4" type="checkbox" name="option7" />Engelsk</label><br />
+              <label><input class="mt-4 mb-4" type="checkbox" name="option8" />Tilbud</label>
             </div>
           </div>
         </div>
@@ -81,11 +96,11 @@ import Genre from "../components/Genre.astro";
           <div class="dropdown">
             <input class="mb-2 ml-2 mt-4" type="text" class="dropdown-search" placeholder="Søg..." />
             <div class="dropdown-content cursor-pointer">
-              <label><input class="mt-4" type="checkbox" name="option7" />0-2 år</label><br />
-              <label><input class="mt-4" type="checkbox" name="option8" />3-5 år</label><br />
-              <label><input class="mt-4" type="checkbox" name="option7" />6-10 år</label><br />
-              <label><input class="mt-4" type="checkbox" name="option8" />10-15 år</label><br />
-              <label><input class="mt-4 mb-4" type="checkbox" name="option8" />Over 15 år</label>
+              <label><input class="mt-4" type="checkbox" name="option1" />0-2 år</label><br />
+              <label><input class="mt-4" type="checkbox" name="option2" />3-5 år</label><br />
+              <label><input class="mt-4" type="checkbox" name="option3" />6-10 år</label><br />
+              <label><input class="mt-4" type="checkbox" name="option4" />10-15 år</label><br />
+              <label><input class="mt-4 mb-4" type="checkbox" name="option5" />Over 15 år</label>
             </div>
           </div>
         </div>
@@ -94,9 +109,9 @@ import Genre from "../components/Genre.astro";
           <div class="dropdown">
             <input class="mb-2 ml-2 mt-4" type="text" class="dropdown-search" placeholder="Søg..." />
             <div class="dropdown-content cursor-pointer">
-              <label><input class="mt-4" type="checkbox" name="option7" />Indbundet</label><br />
-              <label><input class="mt-4" type="checkbox" name="option8" />E-bog</label><br />
-              <label><input class="mt-4 mb-4" type="checkbox" name="option9" />Lydbog</label>
+              <label><input class="mt-4" type="checkbox" name="option1" />Indbundet</label><br />
+              <label><input class="mt-4" type="checkbox" name="option2" />E-bog</label><br />
+              <label><input class="mt-4 mb-4" type="checkbox" name="option3" />Lydbog</label>
             </div>
           </div>
         </div>
@@ -198,8 +213,8 @@ import Genre from "../components/Genre.astro";
       display: grid;
       grid-template-columns: 1fr;
       position: absolute;
-      top: 400px;
-      left: 0px;
+      top: 455px;
+      left: 18px;
       width: 250px;
       max-width: 100%;
     }
