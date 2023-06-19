@@ -42,7 +42,7 @@ import ProductCardSectionBest from "../components/ProductCardSectionBest.astro";
               <img src="/indbunden.webp" alt="book" width="35px" role="img" />
               <div class="title_format">
                 <p>Indbunden</p>
-                <p class="tilbudpris"><strong>{pris_indbunden} DKK</strong></p>
+                <h3 class="tilbudpris"><strong>{pris_indbunden} DKK</strong></h3>
               </div>
               <p><s>{tidligere_pris_indbunden}</s></p>
             </div>
@@ -152,6 +152,9 @@ import ProductCardSectionBest from "../components/ProductCardSectionBest.astro";
     display: grid;
     gap: 50px;
   }
+  .tilbudpris {
+    color: var(--ctaColorGreen);
+  }
   @media only screen and (min-width: 900px) {
     .tilbudpris {
       color: var(--ctaColorGreen);
@@ -232,7 +235,7 @@ import ProductCardSectionBest from "../components/ProductCardSectionBest.astro";
     border-radius: 20px;
     border-color: var(--middleblue);
     padding-block: 10px;
-    padding-inline: 10px;
+    /* padding-inline: 10px; */
     border-width: 2px;
     width: 150px;
     height: 130px;
